@@ -4,30 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>المسيرة الخضراء</title>
+
+  <!-- تحسين SEO -->
+  <meta name="description" content="تعرف على المسيرة الخضراء المغربية، تعريفها، التمارين حولها، وخريطة المسيرة. موقع تعليمي تفاعلي وطابع مغربي أصيل.">
+  <meta name="keywords" content="المسيرة الخضراء, المغرب, تاريخ المغرب, الوحدة الوطنية, تعليم, تاريخ, خريطة المسيرة, تمارين تاريخية">
+  <meta name="author" content="آدم حسيس وعبد الرحمان الصغيري">
+
+  <!-- تحسين المشاركة على الشبكات الاجتماعية (Open Graph) -->
+  <meta property="og:title" content="المسيرة الخضراء المغربية">
+  <meta property="og:description" content="تعرف على المسيرة الخضراء المغربية، تاريخها، التمارين حولها، وخريطة المسيرة.">
+  <meta property="og:image" content="https://i.ibb.co/4tZ1B2X/morocco-map.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="ضع_رابط_موقعك_هنا">
+
+  <!-- تحسين تويتر -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="المسيرة الخضراء المغربية">
+  <meta name="twitter:description" content="تعرف على المسيرة الخضراء المغربية، تاريخها، التمارين حولها، وخريطة المسيرة.">
+  <meta name="twitter:image" content="https://i.ibb.co/4tZ1B2X/morocco-map.png">
+
+  <!-- favicon -->
+  <link rel="icon" href="https://i.ibb.co/4tZ1B2X/morocco-map.png" type="image/png">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap');
+
     body {
       margin: 0;
       font-family: 'Cairo', sans-serif;
-      background: radial-gradient(circle at center, #00111a, #000);
-      color: #fff;
+      background: radial-gradient(circle at center, #012a0f, #001a0a);
+      color: #eaeaea;
       overflow-x: hidden;
     }
 
     header {
-      background: rgba(0, 255, 150, 0.1);
-      backdrop-filter: blur(12px);
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
       padding: 15px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(0,255,150,0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     header h1 {
-      font-size: 1.5em;
-      color: #00ff99;
-      text-shadow: 0 0 10px #00ffaa;
+      font-size: 1.8em;
+      background: linear-gradient(135deg, #00b33c, #c40000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 8px rgba(0,255,0,0.3), 0 0 6px rgba(255,0,0,0.3);
     }
 
     nav {
@@ -36,15 +63,15 @@
     }
 
     nav a {
-      color: #00ffaa;
-      margin: 0 10px;
+      color: #fff;
+      margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
     }
 
     nav a:hover {
-      color: #fff;
+      color: #ffcc00;
     }
 
     section {
@@ -53,58 +80,54 @@
     }
 
     h2 {
-      color: #00ffaa;
+      color: #00b33c;
       font-size: 2em;
       margin-bottom: 20px;
+      text-shadow: 0 0 6px rgba(0,255,0,0.5);
     }
 
     p {
       line-height: 1.8;
       font-size: 1.1em;
-      color: #ddd;
+      color: #f5f5f5;
     }
 
     .exercise {
-      background: rgba(255,255,255,0.05);
+      background: rgba(0,179,60,0.1);
       padding: 20px;
       border-radius: 15px;
       margin: 20px 0;
-      box-shadow: 0 0 20px rgba(0,255,170,0.2);
+      box-shadow: 0 0 15px rgba(255,0,0,0.4);
     }
 
     button {
-      background: linear-gradient(90deg, #00ffaa, #00ccff);
+      background: linear-gradient(90deg, #00b33c, #c40000);
       border: none;
-      color: #000;
-      padding: 10px 20px;
+      color: #fff;
+      padding: 12px 24px;
       border-radius: 10px;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
 
     button:hover {
       transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     }
 
-    .hidden {
-      display: none;
-    }
+    .hidden { display: none; }
 
     footer {
       text-align: center;
-      padding: 20px;
-      border-top: 1px solid rgba(0,255,150,0.3);
-    }
-
-    footer p {
-      margin: 0;
-      color: #00ffaa;
-      line-height: 1.6;
+      padding: 25px;
+      border-top: 2px solid #00b33c;
+      background: rgba(0,0,0,0.5);
+      color: #f5f5f5;
       font-size: 0.95em;
     }
 
-    /* تأثير خلفية ثلاثية الأبعاد */
     .bg-orbs {
       position: fixed;
       top: 0;
@@ -118,23 +141,22 @@
     .orb {
       position: absolute;
       border-radius: 50%;
-      background: radial-gradient(circle, #00ffaa55, transparent);
+      background: radial-gradient(circle, #00b33c55, #c4000055);
       animation: float 10s infinite alternate;
     }
 
     @keyframes float {
       from { transform: translateY(0) rotate(0deg); }
-      to { transform: translateY(-50px) rotate(360deg); }
+      to { transform: translateY(-60px) rotate(360deg); }
     }
 
-    /* صفحة المطورين */
     .developer-name {
-      font-size: 1.2em;
-      color: #00ffaa;
-      margin: 10px 0;
+      font-size: 1.3em;
+      color: #ff4d4d;
+      margin: 12px 0;
+      text-shadow: 0 0 4px rgba(255,0,0,0.5);
     }
 
-    /* تأثير fadeIn عند الانتقال بين الصفحات */
     .fadeInPage {
       opacity: 0;
       animation: fadeInPageAnim 0.8s forwards;
@@ -148,105 +170,113 @@
 </head>
 <body>
 
-  <!-- الخلفية الثلاثية الأبعاد -->
-  <div class="bg-orbs">
-    <div class="orb" style="width:200px;height:200px;left:10%;top:70%;animation-duration:16s;"></div>
-    <div class="orb" style="width:150px;height:150px;right:15%;top:30%;animation-duration:12s;"></div>
-    <div class="orb" style="width:100px;height:100px;left:40%;top:10%;animation-duration:20s;"></div>
-  </div>
+<div class="bg-orbs">
+  <div class="orb" style="width:200px;height:200px;left:10%;top:70%;animation-duration:18s;"></div>
+  <div class="orb" style="width:150px;height:150px;right:15%;top:30%;animation-duration:14s;"></div>
+  <div class="orb" style="width:100px;height:100px;left:40%;top:10%;animation-duration:20s;"></div>
+</div>
 
-  <!-- الهيدر -->
-  <header>
-    <h1>🚩 المسيرة الخضراء</h1>
-    <nav>
-      <a href="#" onclick="showPage('home')">التعريف</a>
-      <a href="#" onclick="showPage('exercises')">التمارين</a>
-      <a href="#" onclick="showPage('developers')">المطورون</a>
-    </nav>
-  </header>
+<header>
+  <h1>🚩 المسيرة الخضراء</h1>
+  <nav>
+    <a href="#" onclick="showPage('home')">التعريف</a>
+    <a href="#" onclick="showPage('exercises')">التمارين</a>
+    <a href="#" onclick="showPage('developers')">المطورون</a>
+  </nav>
+</header>
 
-  <!-- الصفحة الرئيسية -->
-  <section id="home" class="fadeInPage">
-    <h2>تعريف المسيرة الخضراء</h2>
-    <p>
-      المسيرة الخضراء هي حدث تاريخي وطني قاده الملك الحسن الثاني في السادس من نوفمبر سنة 1975.
-      شارك فيها أكثر من 350 ألف متطوع ومتطوعة من مختلف مناطق المغرب، متجهين نحو الأقاليم الصحراوية
-      لاسترجاعها من الاستعمار الإسباني بطريقة سلمية، دون إطلاق رصاصة واحدة.
-    </p>
-    <p>
-      شكلت المسيرة الخضراء رمزاً للوحدة الوطنية، وأظهرت تلاحم الشعب والعرش في سبيل استكمال
-      الوحدة الترابية للمملكة المغربية. ومنذ ذلك التاريخ، شهدت الأقاليم الجنوبية تنمية كبيرة
-      في البنية التحتية والتعليم والصحة والمشاريع الاقتصادية.
-    </p>
-  </section>
+<section id="home" class="fadeInPage">
+  <h2>تعريف المسيرة الخضراء</h2>
+  <p>
+    المسيرة الخضراء هي حدث تاريخي وطني قاده الملك الحسن الثاني في السادس من نوفمبر سنة 1975.
+    شارك فيها أكثر من 350 ألف متطوع ومتطوعة من مختلف مناطق المغرب، متجهين نحو الأقاليم الصحراوية
+    لاسترجاعها من الاستعمار الإسباني بطريقة سلمية، دون إطلاق رصاصة واحدة.
+  </p>
+  <p>
+    شكلت المسيرة الخضراء رمزاً للوحدة الوطنية، وأظهرت تلاحم الشعب والعرش في سبيل استكمال
+    الوحدة الترابية للمملكة المغربية. ومنذ ذلك التاريخ، شهدت الأقاليم الجنوبية تنمية كبيرة
+    في البنية التحتية والتعليم والصحة والمشاريع الاقتصادية.
+  </p>
+  <p>
+    كما تعتبر المسيرة الخضراء درساً فريداً في النضال السلمي والتلاحم الوطني، حيث جسدت
+    قدرة الشعب المغربي على الدفاع عن أرضه بهدوء ووعي، مما جعلها رمزاً للسلام والاعتزاز الوطني.
+  </p>
+</section>
 
-  <!-- صفحة التمارين -->
-  <section id="exercises" class="hidden">
-    <h2>تمارين حول المسيرة الخضراء</h2>
-    <div id="quiz"></div>
-    <button onclick="checkAnswers()">تحقق من الإجابات</button>
-    <p id="result" style="margin-top:20px;color:#00ffaa;"></p>
-  </section>
+<section id="exercises" class="hidden">
+  <h2>تمارين حول المسيرة الخضراء</h2>
+  <div id="quiz"></div>
+  <button onclick="checkAnswers()">تحقق من الإجابات</button>
+  <p id="result" style="margin-top:20px;color:#00b33c;"></p>
+</section>
 
-  <!-- صفحة المطورين -->
-  <section id="developers" class="hidden">
-    <h2>المطورون</h2>
-    <p class="developer-name">آدم حسيس</p>
-    <p class="developer-name">عبد الرحمان الصغيري</p>
-  </section>
+<section id="developers" class="hidden">
+  <h2>المطورون</h2>
+  <p class="developer-name">آدم حسيس</p>
+  <p class="developer-name">عبد الرحمان الصغيري</p>
+</section>
 
-  <!-- الفوتر -->
-  <footer>
-    <p>
-      هذا الموقع مصمم بمناسبة الذكرى الخمسين للمسيرة الخضراء،<br>
-      تم إنشاؤه من قبل طالبين من مدرسة أحمد النجاعي.
-    </p>
-  </footer>
+<footer>
+  <p>
+    هذا الموقع مصمم بمناسبة الذكرى الخمسين للمسيرة الخضراء،<br>
+    تم إنشاؤه من قبل طالبين من مدرسة أحمد النجاعي.
+  </p>
+</footer>
 
-  <script>
-    const questions = [
-      {q: "في أي سنة نظمت المسيرة الخضراء؟", a: "1975", options:["1965","1975","1980"]},
-      {q: "من القائد الذي دعا إليها؟", a: "الملك الحسن الثاني", options:["محمد الخامس","الملك الحسن الثاني","محمد السادس"]},
-      {q: "كم عدد المشاركين تقريباً؟", a: "350 ألف", options:["100 ألف","350 ألف","500 ألف"]},
-      {q: "أين توجهت المسيرة؟", a: "نحو الصحراء المغربية", options:["نحو الشمال","نحو الصحراء المغربية","نحو الشرق"]},
-      {q: "ما الطابع الذي ميزها؟", a: "سلمي", options:["عسكري","سلمي","دبلوماسي"]},
-      {q: "ما الدولة التي كانت تستعمر الصحراء؟", a: "إسبانيا", options:["البرتغال","فرنسا","إسبانيا"]},
-      {q: "في أي شهر تمت؟", a: "نونبر", options:["ماي","يوليوز","نونبر"]},
-      {q: "كم عدد النساء المشاركات تقريباً؟", a: "35 ألف", options:["10 آلاف","35 ألف","50 ألف"]},
-      {q: "ما الهدف من المسيرة؟", a: "استرجاع الأقاليم الصحراوية", options:["الاحتجاج","التحرير السياسي","استرجاع الأقاليم الصحراوية"]},
-      {q: "هل كانت المسيرة مسلحة؟", a: "لا", options:["نعم","لا","جزئياً"]}
-    ];
+<script>
+const questions = [
+  {q: "في أي سنة نظمت المسيرة الخضراء؟", a: "1975", options:["1965","1975","1980"]},
+  {q: "من القائد الذي دعا إليها؟", a: "الملك الحسن الثاني", options:["محمد الخامس","الملك الحسن الثاني","محمد السادس"]},
+  {q: "كم عدد المشاركين تقريباً؟", a: "350 ألف", options:["100 ألف","350 ألف","500 ألف"]},
+  {q: "أين توجهت المسيرة؟", a: "نحو الصحراء المغربية", options:["نحو الشمال","نحو الصحراء المغربية","نحو الشرق"]},
+  {q: "ما الطابع الذي ميزها؟", a: "سلمي", options:["عسكري","سلمي","دبلوماسي"]},
+  {q: "ما الدولة التي كانت تستعمر الصحراء؟", a: "إسبانيا", options:["البرتغال","فرنسا","إسبانيا"]},
+  {q: "في أي شهر تمت؟", a: "نونبر", options:["ماي","يوليوز","نونبر"]},
+  {q: "كم عدد النساء المشاركات تقريباً؟", a: "35 ألف", options:["10 آلاف","35 ألف","50 ألف"]},
+  {q: "ما الهدف من المسيرة؟", a: "استرجاع الأقاليم الصحراوية", options:["الاحتجاج","التحرير السياسي","استرجاع الأقاليم الصحراوية"]},
+  {q: "هل كانت المسيرة مسلحة؟", a: "لا", options:["نعم","لا","جزئياً"]},
+  {q: "ما سبب تسمية 'المسيرة الخضراء' بهذا الاسم؟", a: "لون الملابس والأعلام", options:["لون الملابس والأعلام","لون الصحراء","لون العلم المغربي"]},
+  {q: "كم عدد المشاركين من كل منطقة تقريباً؟", a: "متفاوت حسب المناطق", options:["متساوي","متفاوت حسب المناطق","غير معروف"]},
+  {q: "ما الرسالة السياسية التي أرادها المغرب من المسيرة؟", a: "تأكيد السيادة على الصحراء", options:["تحرير سياسي","تأكيد السيادة على الصحراء","احتلال مناطق جديدة"]},
+  {q: "ما أثر المسيرة على الوحدة الوطنية؟", a: "تعزيز الوحدة الوطنية", options:["ضعف الوحدة الوطنية","تعزيز الوحدة الوطنية","لم تؤثر"]},
+  {q: "ما دور الشباب المغربي في المسيرة؟", a: "شاركوا بوعي وسلمية", options:["شاركوا بوعي وسلمية","لم يشاركوا","شاركوا بعنف"]},
+  {q: "كيف تم تنظيم المسيرة؟", a: "بتنسيق رسمي مع الجيش", options:["بتنسيق رسمي مع الجيش","عشوائي","بتنسيق مع المجتمع المدني فقط"]},
+  {q: "ما أبرز الرموز الوطنية التي ظهرت في المسيرة؟", a: "العلم الوطني", options:["العلم الوطني","الموسيقى","الرقص"]},
+  {q: "هل المسيرة كانت محط اهتمام الإعلام العالمي؟", a: "نعم", options:["لا","نعم","جزئياً"]},
+  {q: "ما أثرها على المجتمع الصحراوي؟", a: "تنمية وبنية تحتية", options:["تنمية وبنية تحتية","تراجع التعليم","لا أثر"]},
+  {q: "ما الدروس المستفادة من المسيرة؟", a: "التلاحم والوعي السلمي", options:["التلاحم والوعي السلمي","الصراع العسكري","لا شيء"]}
+];
 
-    const quiz = document.getElementById("quiz");
-    questions.forEach((item, i) => {
-      const div = document.createElement("div");
-      div.className = "exercise";
-      div.innerHTML = `<p><b>${i+1}. ${item.q}</b></p>` +
-        item.options.map(opt => 
-          `<label><input type='radio' name='q${i}' value='${opt}'> ${opt}</label><br>`
-        ).join('');
-      quiz.appendChild(div);
-    });
+const quiz = document.getElementById("quiz");
+questions.forEach((item, i) => {
+  const div = document.createElement("div");
+  div.className = "exercise";
+  div.innerHTML = `<p><b>${i+1}. ${item.q}</b></p>` +
+    item.options.map(opt => 
+      `<label><input type='radio' name='q${i}' value='${opt}'> ${opt}</label><br>`
+    ).join('');
+  quiz.appendChild(div);
+});
 
-    function showPage(id) {
-      document.querySelectorAll("section").forEach(s => {
-        s.classList.add("hidden");
-        s.classList.remove("fadeInPage"); // إزالة أي تأثير سابق
-      });
-      const page = document.getElementById(id);
-      page.classList.remove("hidden");
-      page.classList.add("fadeInPage"); // إضافة التأثير الجديد
-    }
+function showPage(id) {
+  document.querySelectorAll("section").forEach(s => {
+    s.classList.add("hidden");
+    s.classList.remove("fadeInPage");
+  });
+  const page = document.getElementById(id);
+  page.classList.remove("hidden");
+  page.classList.add("fadeInPage");
+}
 
-    function checkAnswers() {
-      let score = 0;
-      questions.forEach((item, i) => {
-        const selected = document.querySelector(`input[name='q${i}']:checked`);
-        if (selected && selected.value === item.a) score++;
-      });
-      document.getElementById("result").textContent = `نتيجتك: ${score} / ${questions.length}`;
-    }
-  </script>
+function checkAnswers() {
+  let score = 0;
+  questions.forEach((item, i) => {
+    const selected = document.querySelector(`input[name='q${i}']:checked`);
+    if (selected && selected.value === item.a) score++;
+  });
+  document.getElementById("result").textContent = `نتيجتك: ${score} / ${questions.length}`;
+}
+</script>
 
 </body>
 </html>
