@@ -46,8 +46,6 @@ nav a:hover { color: #ffcc00; }
 section {
   padding: 50px;
   min-height: 80vh;
-  position: relative;
-  z-index: 1;
 }
 
 h2 { color: #00b33c; font-size: 2em; margin-bottom: 20px; text-shadow: 0 0 6px rgba(0,255,0,0.5); }
@@ -77,40 +75,54 @@ footer {
   font-size: 0.95em;
 }
 
-/* ======= الصور الحية الطافية بدون تغطية النص ======= */
-.floating-images {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* الصور لا تمنع النقر على النصوص */
-  z-index: 0; /* خلف النصوص */
-}
-.floating-images img {
-  position: absolute;
-  width: 150px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  animation: floatAnim linear infinite;
-  transition: transform 0.5s ease;
-}
-.floating-images img:hover {
-  transform: scale(1.1) rotateY(10deg) rotateX(5deg);
-}
-@keyframes floatAnim {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
-}
+.bg-orbs { position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; }
+.orb { position: absolute; border-radius: 50%; background: radial-gradient(circle, #00b33c55, #c4000055); animation: float 10s infinite alternate; }
+@keyframes float { from { transform: translateY(0) rotate(0deg); } to { transform: translateY(-60px) rotate(360deg); } }
 
 .developer-name { font-size: 1.3em; color: #ff4d4d; margin: 12px 0; text-shadow: 0 0 4px rgba(255,0,0,0.5); }
 
 .fadeInPage { opacity: 0; animation: fadeInPageAnim 0.8s forwards; }
 @keyframes fadeInPageAnim { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
+/* ======= صور حية ومنظمة ======= */
+.content-with-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.content-with-images .text { flex: 1 1 300px; }
+.content-with-images .images {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  perspective: 800px;
+}
+.content-with-images .images img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  cursor: pointer;
+  animation: floatImg 5s ease-in-out infinite alternate;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.content-with-images .images img:hover {
+  transform: rotateY(10deg) rotateX(5deg) scale(1.08);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.7);
+}
+@keyframes floatImg { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
+
 </style>
 </head>
 <body>
+
+<div class="bg-orbs">
+  <div class="orb" style="width:200px;height:200px;left:10%;top:70%;animation-duration:18s;"></div>
+  <div class="orb" style="width:150px;height:150px;right:15%;top:30%;animation-duration:14s;"></div>
+  <div class="orb" style="width:100px;height:100px;left:40%;top:10%;animation-duration:20s;"></div>
+</div>
 
 <header>
   <h1>🚩 المسيرة الخضراء</h1>
@@ -121,29 +133,26 @@ footer {
   </nav>
 </header>
 
-<!-- الصور الطافية -->
-<div class="floating-images">
-  <img src="image1.jpg" style="top:50px; left:20%; animation-duration:6s;">
-  <img src="image2.jpg" style="top:200px; left:60%; animation-duration:8s;">
-  <img src="image3.jpg" style="top:350px; left:35%; animation-duration:5s;">
-</div>
-
+<!-- ======= تعريف المسيرة مع الصور الحية ======= -->
 <section id="home" class="fadeInPage">
   <h2>تعريف المسيرة الخضراء</h2>
-  <p>
-    المسيرة الخضراء هي حدث تاريخي وطني قاده الملك الحسن الثاني في السادس من نوفمبر سنة 1975.
-    شارك فيها أكثر من 350 ألف متطوع ومتطوعة من مختلف مناطق المغرب، متجهين نحو الأقاليم الصحراوية
-    لاسترجاعها من الاستعمار الإسباني بطريقة سلمية، دون إطلاق رصاصة واحدة.
-  </p>
-  <p>
-    شكلت المسيرة الخضراء رمزاً للوحدة الوطنية، وأظهرت تلاحم الشعب والعرش في سبيل استكمال
-    الوحدة الترابية للمملكة المغربية. ومنذ ذلك التاريخ، شهدت الأقاليم الجنوبية تنمية كبيرة
-    في البنية التحتية والتعليم والصحة والمشاريع الاقتصادية.
-  </p>
-  <p>
-    كما تعتبر المسيرة الخضراء درساً فريداً في النضال السلمي والتلاحم الوطني، حيث جسدت
-    قدرة الشعب المغربي على الدفاع عن أرضه بهدوء ووعي، مما جعلها رمزاً للسلام والاعتزاز الوطني.
-  </p>
+  <div class="content-with-images">
+    <div class="text">
+      <p>المسيرة الخضراء هي حدث تاريخي وطني قاده الملك الحسن الثاني في السادس من نوفمبر سنة 1975.
+      شارك فيها أكثر من 350 ألف متطوع ومتطوعة من مختلف مناطق المغرب، متجهين نحو الأقاليم الصحراوية
+      لاسترجاعها من الاستعمار الإسباني بطريقة سلمية، دون إطلاق رصاصة واحدة.</p>
+      <p>شكلت المسيرة الخضراء رمزاً للوحدة الوطنية، وأظهرت تلاحم الشعب والعرش في سبيل استكمال
+      الوحدة الترابية للمملكة المغربية. ومنذ ذلك التاريخ، شهدت الأقاليم الجنوبية تنمية كبيرة
+      في البنية التحتية والتعليم والصحة والمشاريع الاقتصادية.</p>
+      <p>كما تعتبر المسيرة الخضراء درساً فريداً في النضال السلمي والتلاحم الوطني، حيث جسدت
+      قدرة الشعب المغربي على الدفاع عن أرضه بهدوء ووعي، مما جعلها رمزاً للسلام والاعتزاز الوطني.</p>
+    </div>
+    <div class="images">
+      <img src="image1.jpg" alt="مسيرة خضراء 1">
+      <img src="image2.jpg" alt="مسيرة خضراء 2">
+      <img src="image3.jpg" alt="مسيرة خضراء 3">
+    </div>
+  </div>
 </section>
 
 <section id="exercises" class="hidden">
