@@ -48,9 +48,22 @@ section {
   min-height: 80vh;
 }
 
-h2 { color: #00b33c; font-size: 2em; margin-bottom: 20px; text-shadow: 0 0 6px rgba(0,255,0,0.5); }
+h2 {
+  color: #00b33c;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 6px rgba(0,255,0,0.5);
+}
 p { line-height: 1.8; font-size: 1.1em; color: #f5f5f5; }
-.exercise { background: rgba(0,179,60,0.1); padding: 20px; border-radius: 15px; margin: 20px 0; box-shadow: 0 0 15px rgba(255,0,0,0.4); }
+
+.exercise {
+  background: rgba(0,179,60,0.1);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 0 15px rgba(255,0,0,0.4);
+}
+
 button {
   background: linear-gradient(90deg, #00b33c, #c40000);
   border: none;
@@ -75,23 +88,38 @@ footer {
   font-size: 0.95em;
 }
 
-.developer-name { font-size: 1.3em; color: #ff4d4d; margin: 12px 0; text-shadow: 0 0 4px rgba(255,0,0,0.5); }
+.developer-name {
+  font-size: 1.3em;
+  color: #ff4d4d;
+  margin: 12px 0;
+  text-shadow: 0 0 4px rgba(255,0,0,0.5);
+}
 
-.fadeInPage { opacity: 0; animation: fadeInPageAnim 0.8s forwards; }
-@keyframes fadeInPageAnim { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fadeInPage {
+  opacity: 0;
+  animation: fadeInPageAnim 0.8s forwards;
+}
+@keyframes fadeInPageAnim {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-/* صورة واحدة فوق النص */
+/* صورة متجاوبة لجميع الأجهزة */
 .image-top {
   width: 100%;
-  max-width: 600px;
+  max-width: 450px;
+  height: auto;
   display: block;
   margin: 0 auto 30px auto;
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.5);
   animation: floatImg 5s ease-in-out infinite alternate;
 }
-@keyframes floatImg { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
-
+@keyframes floatImg {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
 </style>
 </head>
 <body>
@@ -105,18 +133,12 @@ footer {
   </nav>
 </header>
 
-<!-- صورة فوق النص -->
 <section id="home" class="fadeInPage">
   <h2>تعريف المسيرة الخضراء</h2>
-  <img src="image2.jpg" alt="مسيرة خضراء" class="image-top">
-  <p>المسيرة الخضراء هي حدث تاريخي وطني قاده الملك الحسن الثاني في السادس من نوفمبر سنة 1975.
-  شارك فيها أكثر من 350 ألف متطوع ومتطوعة من مختلف مناطق المغرب، متجهين نحو الأقاليم الصحراوية
-  لاسترجاعها من الاستعمار الإسباني بطريقة سلمية، دون إطلاق رصاصة واحدة.</p>
-  <p>شكلت المسيرة الخضراء رمزاً للوحدة الوطنية، وأظهرت تلاحم الشعب والعرش في سبيل استكمال
-  الوحدة الترابية للمملكة المغربية. ومنذ ذلك التاريخ، شهدت الأقاليم الجنوبية تنمية كبيرة
-  في البنية التحتية والتعليم والصحة والمشاريع الاقتصادية.</p>
-  <p>كما تعتبر المسيرة الخضراء درساً فريداً في النضال السلمي والتلاحم الوطني، حيث جسدت
-  قدرة الشعب المغربي على الدفاع عن أرضه بهدوء ووعي، مما جعلها رمزاً للسلام والاعتزاز الوطني.</p>
+  <img src="image2.jpg" alt="المسيرة الخضراء" class="image-top">
+  <p>المسيرة الخضراء حدث وطني عظيم قاده المغاربة سنة 1975 تحت توجيهات الملك الحسن الثاني رحمه الله، لاسترجاع الأقاليم الصحراوية بطريقة سلمية، دون سلاح، وبإيمان قوي بوحدة الوطن.</p>
+  <p>شارك فيها أكثر من 350 ألف مغربي ومغربية من مختلف المناطق، حاملين القرآن والعلم المغربي، في مشهد جسّد روح التضامن والتلاحم بين الشعب والملك.</p>
+  <p>أصبحت المسيرة الخضراء رمزًا للنضال السلمي والوحدة الوطنية، وعلامة خالدة في تاريخ المغرب الحديث.</p>
 </section>
 
 <section id="exercises" class="hidden">
@@ -130,6 +152,7 @@ footer {
   <h2>المطورون</h2>
   <p class="developer-name">آدم حسيس</p>
   <p class="developer-name">عبد الرحمان الصغيري</p>
+  <p style="color:#ffcc00; margin-top:15px;"> تم بتأطير من الأستاذة فاطمة آيت لعديك</p>
 </section>
 
 <footer>
@@ -137,55 +160,56 @@ footer {
 </footer>
 
 <script>
-// ======= أسئلة التمارين كاملة =======
 const questions = [
-  {q: "في أي سنة نظمت المسيرة الخضراء؟", a: "1975", options:["1965","1975","1980"]},
-  {q: "من القائد الذي دعا إليها؟", a: "الملك الحسن الثاني", options:["محمد الخامس","الملك الحسن الثاني","محمد السادس"]},
-  {q: "كم عدد المشاركين تقريباً؟", a: "350 ألف", options:["100 ألف","350 ألف","500 ألف"]},
-  {q: "أين توجهت المسيرة؟", a: "نحو الصحراء المغربية", options:["نحو الشمال","نحو الصحراء المغربية","نحو الشرق"]},
-  {q: "ما الطابع الذي ميزها؟", a: "سلمي", options:["عسكري","سلمي","دبلوماسي"]},
-  {q: "ما الدولة التي كانت تستعمر الصحراء؟", a: "إسبانيا", options:["البرتغال","فرنسا","إسبانيا"]},
-  {q: "في أي شهر تمت؟", a: "نونبر", options:["ماي","يوليوز","نونبر"]},
-  {q: "كم عدد النساء المشاركات تقريباً؟", a: "35 ألف", options:["10 آلاف","35 ألف","50 ألف"]},
-  {q: "ما الهدف من المسيرة؟", a: "استرجاع الأقاليم الصحراوية", options:["الاحتجاج","التحرير السياسي","استرجاع الأقاليم الصحراوية"]},
-  {q: "هل كانت المسيرة مسلحة؟", a: "لا", options:["نعم","لا","جزئياً"]},
-  {q: "ما سبب تسمية 'المسيرة الخضراء' بهذا الاسم؟", a: "لون الملابس والأعلام", options:["لون الملابس والأعلام","لون الصحراء","لون العلم المغربي"]},
-  {q: "كم عدد المشاركين من كل منطقة تقريباً؟", a: "متفاوت حسب المناطق", options:["متساوي","متفاوت حسب المناطق","غير معروف"]},
-  {q: "ما الرسالة السياسية التي أرادها المغرب من المسيرة؟", a: "تأكيد السيادة على الصحراء", options:["تحرير سياسي","تأكيد السيادة على الصحراء","احتلال مناطق جديدة"]},
-  {q: "ما أثر المسيرة على الوحدة الوطنية؟", a: "تعزيز الوحدة الوطنية", options:["ضعف الوحدة الوطنية","تعزيز الوحدة الوطنية","لم تؤثر"]},
-  {q: "ما دور الشباب المغربي في المسيرة؟", a: "شاركوا بوعي وسلمية", options:["شاركوا بوعي وسلمية","لم يشاركوا","شاركوا بعنف"]},
-  {q: "كيف تم تنظيم المسيرة؟", a: "بتنسيق رسمي مع الجيش", options:["بتنسيق رسمي مع الجيش","عشوائي","بتنسيق مع المجتمع المدني فقط"]},
-  {q: "ما أبرز الرموز الوطنية التي ظهرت في المسيرة؟", a: "العلم الوطني", options:["العلم الوطني","الموسيقى","الرقص"]},
-  {q: "هل المسيرة كانت محط اهتمام الإعلام العالمي؟", a: "نعم", options:["لا","نعم","جزئياً"]},
-  {q: "ما أثرها على المجتمع الصحراوي؟", a: "تنمية وبنية تحتية", options:["تنمية وبنية تحتية","تراجع التعليم","لا أثر"]},
-  {q: "ما الدروس المستفادة من المسيرة؟", a: "التلاحم والوعي السلمي", options:["التلاحم والوعي السلمي","الصراع العسكري","لا شيء"]}
+  {q:"في أي سنة نظمت المسيرة الخضراء؟",a:"1975",options:["1965","1975","1980"]},
+  {q:"من القائد الذي دعا إليها؟",a:"الملك الحسن الثاني",options:["محمد الخامس","الملك الحسن الثاني","محمد السادس"]},
+  {q:"كم عدد المشاركين تقريباً؟",a:"350 ألف",options:["100 ألف","350 ألف","500 ألف"]},
+  {q:"أين توجهت المسيرة؟",a:"نحو الصحراء المغربية",options:["نحو الشمال","نحو الصحراء المغربية","نحو الشرق"]},
+  {q:"ما الطابع الذي ميزها؟",a:"سلمي",options:["عسكري","سلمي","دبلوماسي"]},
+  {q:"ما الدولة التي كانت تستعمر الصحراء؟",a:"إسبانيا",options:["البرتغال","فرنسا","إسبانيا"]},
+  {q:"في أي شهر تمت؟",a:"نونبر",options:["ماي","يوليوز","نونبر"]},
+  {q:"كم عدد النساء المشاركات تقريباً؟",a:"35 ألف",options:["10 آلاف","35 ألف","50 ألف"]},
+  {q:"ما الهدف من المسيرة؟",a:"استرجاع الأقاليم الصحراوية",options:["الاحتجاج","التحرير السياسي","استرجاع الأقاليم الصحراوية"]},
+  {q:"هل كانت المسيرة مسلحة؟",a:"لا",options:["نعم","لا","جزئياً"]},
+  {q:"ما سبب تسمية 'المسيرة الخضراء' بهذا الاسم؟",a:"لون الملابس والأعلام",options:["لون الملابس والأعلام","لون الصحراء","لون العلم المغربي"]},
+  {q:"كم عدد المشاركين من كل منطقة تقريباً؟",a:"متفاوت حسب المناطق",options:["متساوي","متفاوت حسب المناطق","غير معروف"]},
+  {q:"ما الرسالة السياسية التي أرادها المغرب من المسيرة؟",a:"تأكيد السيادة على الصحراء",options:["تحرير سياسي","تأكيد السيادة على الصحراء","احتلال مناطق جديدة"]},
+  {q:"ما أثر المسيرة على الوحدة الوطنية؟",a:"تعزيز الوحدة الوطنية",options:["ضعف الوحدة الوطنية","تعزيز الوحدة الوطنية","لم تؤثر"]},
+  {q:"ما دور الشباب المغربي في المسيرة؟",a:"شاركوا بوعي وسلمية",options:["شاركوا بوعي وسلمية","لم يشاركوا","شاركوا بعنف"]},
+  {q:"كيف تم تنظيم المسيرة؟",a:"بتنسيق رسمي مع الجيش",options:["بتنسيق رسمي مع الجيش","عشوائي","بتنسيق مع المجتمع المدني فقط"]},
+  {q:"ما أبرز الرموز الوطنية التي ظهرت في المسيرة؟",a:"العلم الوطني",options:["العلم الوطني","الموسيقى","الرقص"]},
+  {q:"هل المسيرة كانت محط اهتمام الإعلام العالمي؟",a:"نعم",options:["لا","نعم","جزئياً"]},
+  {q:"ما أثرها على المجتمع الصحراوي؟",a:"تنمية وبنية تحتية",options:["تنمية وبنية تحتية","تراجع التعليم","لا أثر"]},
+  {q:"ما الدروس المستفادة من المسيرة؟",a:"التلاحم والوعي السلمي",options:["التلاحم والوعي السلمي","الصراع العسكري","لا شيء"]}
 ];
 
-const quiz = document.getElementById("quiz");
-questions.forEach((item, i) => {
-  const div = document.createElement("div");
-  div.className = "exercise";
-  div.innerHTML = `<p><b>${i+1}. ${item.q}</b></p>` +
-    item.options.map(opt => `<label><input type='radio' name='q${i}' value='${opt}'> ${opt}</label><br>`).join('');
+const quiz=document.getElementById("quiz");
+questions.forEach((item,i)=>{
+  const div=document.createElement("div");
+  div.className="exercise";
+  div.innerHTML=`<p><b>${i+1}. ${item.q}</b></p>`+
+  item.options.map(opt=>`<label><input type='radio' name='q${i}' value='${opt}'> ${opt}</label><br>`).join('');
   quiz.appendChild(div);
 });
 
-function showPage(id) {
-  document.querySelectorAll("section").forEach(s => { s.classList.add("hidden"); s.classList.remove("fadeInPage"); });
-  const page = document.getElementById(id);
+function showPage(id){
+  document.querySelectorAll("section").forEach(s=>{
+    s.classList.add("hidden");
+    s.classList.remove("fadeInPage");
+  });
+  const page=document.getElementById(id);
   page.classList.remove("hidden");
   page.classList.add("fadeInPage");
 }
 
-function checkAnswers() {
-  let score = 0;
-  questions.forEach((item, i) => {
-    const selected = document.querySelector(`input[name='q${i}']:checked`);
-    if (selected && selected.value === item.a) score++;
+function checkAnswers(){
+  let score=0;
+  questions.forEach((item,i)=>{
+    const selected=document.querySelector(`input[name='q${i}']:checked`);
+    if(selected && selected.value===item.a) score++;
   });
-  document.getElementById("result").textContent = `نتيجتك: ${score} / ${questions.length}`;
+  document.getElementById("result").textContent=`نتيجتك: ${score} / ${questions.length}`;
 }
 </script>
-
 </body>
 </html>
